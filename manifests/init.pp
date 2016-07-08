@@ -21,7 +21,7 @@ class criminal_minds {
 	$team_data.each | String $member | {
 		file { "/var/www/${member}.html":
             ensure => file,
-            content => epp('criminal_minds/team_member.epp', {'member_name' => $member[member_name], 'characteristics' => $member[characteristics]}),
+            content => epp('criminal_minds/team_member.epp', {'member_name' => "$member[member_name]", 'characteristics' => ["$member[characteristics]"]}),
         }
 	}
 }
