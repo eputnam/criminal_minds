@@ -1,11 +1,9 @@
-class helloworld {
-	testdir = "/etc/testdir"
-
-	notify { "hello world": }
-	file { testdir :
+class criminal_minds {
+	notify { "Wheels up in 30!": }
+	file { '/etc/testdir':
 		ensure => directory,
 	}
-	file { "#{testdir}/helloworld":
+	file { '/etc/testdir/helloworld':
 		ensure => file
 	}
 }
