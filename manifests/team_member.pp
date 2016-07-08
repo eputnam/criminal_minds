@@ -8,7 +8,7 @@ define criminal_minds::team_member(
 
         file { '/var/www/${member_name}.html':
             ensure => file,
-            content => template('templates/team_member.erb', {'member_name' => $member_name, 'characteristics' => $characteristics}),
+            content => template('criminal_minds/team_member.erb', {'member_name' => $member_name, 'characteristics' => $characteristics}),
         }
 
     }
