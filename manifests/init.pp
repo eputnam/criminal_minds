@@ -1,10 +1,9 @@
 class criminal_minds {
-
 	include 'stdlib'
 
 	$configdir		= "/etc/criminal_minds"
 	$configfile		= "team_members=7\nstarting_location=FBI_HQ\ndestination='Philadelphia, PA'"
-	$team_data		= loadyaml('criminal_minds/lib/team.yaml')
+	$team_data		= parseyaml('/etc/puppetlabs/code/environments/production/modules/criminal_minds/lib/team.yaml')
 
 	notify { "Wheels up in 30!": }
 
