@@ -1,18 +1,19 @@
-member: sreid
+---
+sreid:
     member_name: Spencer Reid
     characteristics: ["smart", "dorky", "well-kept"]
-member: jjareau
+jjareau:
     member_name: Jennifer Jareau
     characteristics: ["strong", "feeling", "clever"]
-member: ahotchner
+ahotchner:
     member_name: Aaron Hotchner
     characteristics: ["firm", "leader", "compassionate"]
-member: dmorgan
+dmorgan:
     member_name: Derek Morgan
     characteristics: ["hot-headed", "old-fashioned", "alpha"]
-member: pgarcia
+pgarcia:
     member_name: Penelope Garcia
     characteristics: ["punk", "nerdy", "all the feels"]
-member: drossi
+drossi:
     member_name: David Rossi
     characteristics: ["practical", "empathetic", "italian"]
