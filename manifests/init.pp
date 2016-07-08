@@ -1,9 +1,12 @@
 class criminal_minds {
+
+	$testdir		= "/etc/testdir"
+
 	notify { "Wheels up in 30!": }
-	file { '/etc/testdir':
+	file { $testdir :
 		ensure => directory,
 	}
-	file { '/etc/testdir/helloworld':
+	file { "${testdir}/helloworld":
 		ensure => file
 	}
 }
