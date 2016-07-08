@@ -18,7 +18,7 @@ class criminal_minds {
 		ensure 		=> file,
 		content 	=> $configfile,
 	}
-	$team_data.each | Hash $member | {
+	$team_data.each | String $member | {
 		criminal_minds::team_member { "$member":
 		member_name			=> "$member[member_name]",
 		characteristics		=> "$member[characteristics]",
