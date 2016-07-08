@@ -6,13 +6,18 @@ class criminal_minds {
 	notify { "Wheels up in 30!": }
 
 	file { '/etc/testdir':
-		ensure => absent,
+		ensure 		=> absent,
+		force 		=> true,
 	}
 	file { $configdir :
-		ensure => directory,
+		ensure 		=> directory,
 	}
 	file { "${configdir}/criminal_minds.conf":
-		ensure => file,
-		content => $configfile,
+		ensure 		=> file,
+		content 	=> $configfile,
+	}
+	criminal_minds::team_member { 'sreid':
+		member_name 		=> "Spencer Reid",
+		characteristics 	=> ["smart", "dorky", "well-kept"]
 	}
 }
