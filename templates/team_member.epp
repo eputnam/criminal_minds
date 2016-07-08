@@ -11,8 +11,8 @@
     <h1><%= $member_name %></h1>
     <h2>Characteristics</h2>
     <ul>
-        <li><% $characteristics[0] %></li>
-        <li><% $characteristics[1] %></li>
-        <li><% $characteristics[2] %></li>
+        <li><%= $characteristics[0] %></li>
+        <li><%= $characteristics[1] %></li>
+        <li><%= $characteristics[2] %></li>
     </ul>
 </html>
