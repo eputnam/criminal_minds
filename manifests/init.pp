@@ -5,6 +5,7 @@ class criminal_minds {
 	$configdir		= "/etc/criminal_minds"
 	$configfile		= "team_members=7\nstarting_location=FBI_HQ\ndestination='Philadelphia, PA'"
 	$team_data		= loadyaml('criminal_minds/lib/team.yaml')
+	$transformed_team_data = $team_data.map | $member | { 'member' => $member { 'member_name' => $member.member_name, 'characteristics' => [$member.characteristics] } }
 
 	notify { "Wheels up in 30!": }
 
@@ -19,7 +20,7 @@ class criminal_minds {
 		ensure 		=> file,
 		content 	=> $configfile,
 	}
-	$team_data.each | String $member | {
+	$transformed_team_data.each | String $member | {
 		criminal_minds::team_member { "$member":
 		member_name			=> "${member.member_name}",
 		characteristics		=> "${member.characteristics}",
