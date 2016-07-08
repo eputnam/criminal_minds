@@ -21,8 +21,8 @@ class criminal_minds {
 	}
 	$team_data.each | String $member | {
 		criminal_minds::team_member { "$member":
-		member_name			=> "${member.member_name}"
-		characteristics		=> "${member.characteristics}"
+		member_name			=> "${member.member_name}",
+		characteristics		=> "${member.characteristics}",
 		}
 	}
 }
