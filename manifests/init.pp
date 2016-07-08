@@ -1,9 +1,11 @@
 class helloworld {
+	testdir = "/etc/testdir"
+
 	notify { "hello world": }
-	file { '/etc/testdir':
+	file { testdir :
 		ensure => directory,
 	}
-	file { '/etc/tesdir/helloworld':
-		ensure => present
+	file { "#{testdir}/helloworld":
+		ensure => file
 	}
 }
