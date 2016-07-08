@@ -6,7 +6,7 @@ define criminal_minds::team_member(
             fail('base class must be included!')
         }
 
-        file { '/var/www/${member_name}.html':
+        file { "/var/www/${member_name}.html":
             ensure => file,
             content => epp('criminal_minds/team_member.epp', {'member_name' => $member_name, 'characteristics' => $characteristics}),
         }
