@@ -2,6 +2,6 @@ class helloworld {
 	notify { "hello world": }
 }
 
-directory { '/etc/testdir':
+file { '/etc/testdir':
 	ensure => directory,
 }
