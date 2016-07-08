@@ -19,9 +19,9 @@ class criminal_minds {
 		content 	=> $configfile,
 	}
 	$team_data.each | $member | {
-		criminal_minds::team_member { "${member["member_id"]}":
-		member_name			=> "${member["member_name"]}",
-		characteristics		=> "${member[characteristics]}",
+		criminal_minds::team_member { $member[member_id]:
+		member_name			=> $member[member_name],
+		characteristics		=> $member[characteristics],
 		}
 	}
 }
