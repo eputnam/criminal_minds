@@ -1,0 +1,13 @@
+<%- | Hash $team_members
+| -%>
+
+<!DOCTYPE=html>
+<html>
+<head>
+    <title>The Team</title>
+</head>
+<body>
+    <% $team_members.each | $member | { %>
+        <h1><a href="./${member.member_id}.html"><%= $member.member_name %></h1>
+    <% } %>
+</body>

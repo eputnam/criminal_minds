@@ -15,4 +15,4 @@
         <li><%= $characteristics[1] %></li>
         <li><%= $characteristics[2] %></li>
     </ul>
-</html>
+</body>
