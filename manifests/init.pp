@@ -5,21 +5,12 @@ class criminal_minds {
 	$configfile		= "team_members=7\nstarting_location=FBI_HQ\ndestination='Philadelphia, PA'\n"
 	$docroot		= "/var/www"
 	$team_data		= {
-		{
-			"member_id" => "sreid",
-			"member_name" => "Spencer Reid",
-			"characteristics" => ["smart", "awkward", "well-kept"]
-		},
-		{
-			"member_id" => "ahotchner",
-			"member_name" => "Aaron Hotchner",
-			"characteristics" => ["firm", "leader", "compassionate"]
-		},
-		{
-			"member_id" => "dmorgan",
-			"member_name" => "Derek Morgan",
-			"characteristics" => ["hot-headed", "old-fashioned", "alpha"]
-		}
+		"member" =>
+			{ "member_id" => "sreid", "member_name" => "Spencer Reid", "characteristics" => ["smart", "awkward", "well-kept"]},
+		"member" =>
+			{ "member_id" => "ahotchner", "member_name" => "Aaron Hotchner", "characteristics" => ["firm", "leader", "compassionate"]},
+		"member" =>
+			{ "member_id" => "dmorgan", "member_name" => "Derek Morgan", "characteristics" => ["hot-headed", "old-fashioned", "alpha"]}
 	}
 
 	notify { "Wheels up in 30!": }
