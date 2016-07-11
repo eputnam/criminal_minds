@@ -7,9 +7,9 @@ class criminal_minds {
 	$team_data		= {
 		"member" =>
 			{ "member_id" => "sreid", "member_name" => "Spencer Reid", "characteristics" => ["smart", "awkward", "well-kept"]},
-		"member" =>
+		"member2" =>
 			{ "member_id" => "ahotchner", "member_name" => "Aaron Hotchner", "characteristics" => ["firm", "leader", "compassionate"]},
-		"member" =>
+		"member3" =>
 			{ "member_id" => "dmorgan", "member_name" => "Derek Morgan", "characteristics" => ["hot-headed", "old-fashioned", "alpha"]}
 	}
 
