@@ -7,7 +7,8 @@
     <title>The Team</title>
 </head>
 <body>
+	<h1>The Team</h1>
     <% $team_members.each | $member,$info | { -%>
-        <h1><a href="./<%= $info[member_id] %>.html"><%= $info[member_name] %></h1>
+        <h2><a href="./<%= $member %>.html"><%= $info[member_name] %></h1>
     <% } -%>
 </body>
