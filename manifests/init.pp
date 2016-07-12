@@ -3,15 +3,15 @@ class criminal_minds {
 
         $configdir              = "/etc/criminal_minds"
         $configfile             = "team_members=7\nstarting_location=FBI_HQ\ndestination='Philadelphia, PA'\n"
-        $docroot                = "/var/www"
-        $team_data              = {
-                "member" =>
-                        { "member_id" => "sreid", "member_name" => "Spencer Reid", "characteristics" => ["smart", "awkward", "well-kept"]},
-                "member2" =>
-                        { "member_id" => "ahotchner", "member_name" => "Aaron Hotchner", "characteristics" => ["firm", "leader", "compassionate"]},
-                "member3" =>
-                        { "member_id" => "dmorgan", "member_name" => "Derek Morgan", "characteristics" => ["hot-headed", "old-fashioned", "alpha"]}
-        }
+        # $team_data              = {
+        #         "member" =>
+        #                 { "member_id" => "sreid", "member_name" => "Spencer Reid", "characteristics" => ["smart", "awkward", "well-kept"]},
+        #         "member2" =>
+        #                 { "member_id" => "ahotchner", "member_name" => "Aaron Hotchner", "characteristics" => ["firm", "leader", "compassionate"]},
+        #         "member3" =>
+        #                 { "member_id" => "dmorgan", "member_name" => "Derek Morgan", "characteristics" => ["hot-headed", "old-fashioned", "alpha"]}
+        # }
+		$team_data = loadyaml('/etc/puppetlabs/code/environments/production/modules/criminal_minds/lib/team.yaml')
 
         notify { "Wheels up in 30!": }
 
@@ -32,10 +32,10 @@ class criminal_minds {
                 content         => epp("criminal_minds/index.epp",{ "team_members" => $team_data })
         }
 
-        $team_data.each | $otherthing,$member | {
-                criminal_minds::team_member { $member[member_id] :
-                member_name             => $member[member_name],
-                characteristics         => $member[characteristics],
+        $team_data.each | $member, $info | {
+                criminal_minds::team_member { $info[member_id] :
+                member_name             => $info[member_name],
+                characteristics         => $info[characteristics],
                 }
         }
 }
